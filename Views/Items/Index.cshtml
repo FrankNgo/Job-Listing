@@ -1,0 +1,19 @@
+<style>
+  h1{text-align:center; color:blue;}
+</style>
+
+<h1>To Do List</h1>
+<div class="well">
+<ul>
+  @foreach(var item in Model)
+  {
+    <li>@item.GetTitle()</li>
+    <li>@item.GetDescription()</li>
+    <li>@item.GetContact()</li>
+  }
+</ul>
+</div>
+<p><a href="/items/new">Add another item</a></p>
+<form action="/items/delete" method="post">
+  <button type="submit" name="button">Clear All Items</button>
+</form>
